@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -228,7 +229,7 @@ public class PlayerBehaviour : MonoBehaviour
         else
         {
 
-            //Go to end scene
+            SceneManager.LoadScene("End");
         }
     }
 }

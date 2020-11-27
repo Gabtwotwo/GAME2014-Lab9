@@ -44,7 +44,7 @@ public class BulletFactory
         fatBullet = Resources.Load("Prefabs/Fat Bullet") as GameObject;
         pulsingBullet = Resources.Load("Prefabs/Pulsing Bullet") as GameObject;
 
-        gameController = GameObject.FindObjectOfType<GameController>();
+
     }
 
     /// <summary>
@@ -77,7 +77,13 @@ public class BulletFactory
                 break;
         }
 
+        if (gameController == null)
+        {
+            gameController = GameObject.FindObjectOfType<GameController>();
+
+        }
         tempBullet.transform.parent = gameController.gameObject.transform;
+
         tempBullet.SetActive(false);
 
         return tempBullet;
